@@ -19,8 +19,14 @@
 % サイズ自動調整括弧くん簡略化ありがとうございます
 \newcommand{\paren}[1]{\left(#1\right)}
 \newcommand{\sbra}[1]{\left\lbrack#1\right\rbrack}
+\newcommand{\abra}[1]{\left\langle#1\right\rangle}
 \newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\norm}[1]{\left\|#1\right\|}
+% extra math operators
+% 斜体にしないでのやつ
+\newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
+% \nolimitsなしだと，display環境で下付き文字が真下につく
+
 % ! 行間に文章入れたければ\intertext{文章}
 % alignatを使うと偶数番目の&で空白が入らない．\begin{alignat}{(行ごとの&の個数+1)/2}
 % alignedはequation内などで部分的に位置揃えたいときに
@@ -33,6 +39,15 @@
 % \usepackage{mathtools}
 % \mathtoolsset{showonlyrefs=true}
 % 転置のTは\top
+% 指数関数の指数部が複雑なときは\expではなく\mathrm{exp}の方が見やすいだろう
+% 空集合は\emptyset，集合の引算は\setminus
+% 下付き文字ありのcup[cap]は\bigcap[\bigcup]を使おう．外積も同様にbig版を
+% \phantom{text}で`text`部分と同じサイズの見えないボックスをつくれる．この類いろいろある
+% \qquad, \quad, ~, \;, \>, \:, \ , (\!これはマイナス)でも左右の空白いれれる．左は大きい順
+% \displaystyle を使うとinlineの分数表記で字が小さくならずに済むけどそもそもinlineで\frac{}使うな
+% コンマ区切り内で省略記号を使うときは\cdots{}ではなく\ldots{}を使いましょう．(a,b,...,f)な感じ
+% 引用符は""ではなく``''で入力するのが正しい
+% 角括弧には<>ではなく\langle\rangle
 
 
 % 図
@@ -177,7 +192,6 @@
 \def\thetitle{\@title}
 \def\thesubtitle{\@subtitle}
 \def\theauthor{\@author}
-\def\theteacher{\@teacher}
 \def\thegakka{\@gakka}
 \def\thegrade{\@grade}
 \def\thestuid{\@stuid}
