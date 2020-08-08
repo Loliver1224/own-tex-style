@@ -148,6 +148,13 @@
 \def\crefmiddlegroupconjunction{, }
 \def\creflastgroupconjunction{, }
 
+% TODO:
+% hyperefとcleverefの併用時に，図表番号参照後のスペースが入らない問題の応急措置．
+% 番号前にはちゃんと入ってるけど後に入ってないせいで後の文字とひっついてる．
+% 下記設定か，そもそもhyoeref使わなければちゃんとスペース入るけど
+% hyperef側の設定うまく書き換えれたらいいんだけどわからん．とりあえずこれで
+\crefformat{figure}{図\,#2#1#3\,}
+
 
 % ソースコード
 \usepackage{listings}
