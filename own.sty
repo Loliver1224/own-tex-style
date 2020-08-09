@@ -18,6 +18,7 @@
 \usepackage{diffcoeff}  % 微分カンタンに書けるってさ
 % サイズ自動調整括弧くん簡略化ありがとうございます
 \newcommand{\paren}[1]{\left(#1\right)}
+\newcommand{\Brace}[1]{\left\{#1\right\}}
 \newcommand{\sbra}[1]{\left\lbrack#1\right\rbrack}
 \newcommand{\abra}[1]{\left\langle#1\right\rangle}
 \newcommand{\abs}[1]{\left|#1\right|}
@@ -26,6 +27,8 @@
 % 斜体にしないでのやつ
 \newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
 % \nolimitsなしだと，display環境で下付き文字が真下につく
+% わざわざ\expコマンド使うのは指数部が複雑なときなのに括弧なしはねェだろうよ
+\renewcommand{\exp}[1]{\mathop{\mathrm{exp}}\nolimits\paren{#1}}
 
 % ! 行間に文章入れたければ\intertext{文章}
 % alignatを使うと偶数番目の&で空白が入らない．\begin{alignat}{(行ごとの&の個数+1)/2}
@@ -126,7 +129,7 @@
 \crefname{subappendix}{付録}{付録}
 \crefname{subsubappendix}{付録}{付録}
 \crefname{subsubsubappendix}{付録}{付録}
-\crefformat{lstlisting}{ソースコード\,#2#1#3\,}  % 番号前後にちょいスペース入れてる
+\crefformat{lstlisting}{ソースコード #2#1#3 }  % 番号前後にちょいスペース入れてる
 \crefformat{page}{#2#1#3{ページ}}
 \crefrangeformat{page}{#3#1#4{--}#5#2#6{ページ}}
 \crefmultiformat{page}{#2#1#3{ページ}}{, #2#1#3{ページ}}{, #2#1#3}{, #2#1#3{ページ}}
@@ -155,6 +158,7 @@
 % 下記設定か，そもそもhyoeref使わなければちゃんとスペース入るけど
 % hyperef側の設定うまく書き換えれたらいいんだけどわからん．とりあえずこれで
 \crefformat{figure}{図 #2#1#3 }
+\crefformat{table}{表 #2#1#3 }
 
 
 % ソースコード
