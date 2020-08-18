@@ -11,6 +11,12 @@
 
 パッケージはTeX Live Managerでちゃんとアプデしとけよ！
 
+## 導入方法
+
+`%USERPROFILE%\texmf\tex\latex\own`に`own.sty`置いとけば大丈夫なはず
+
+※フォルダ名はstyファイル名と一緒にしないとダメ．フォルダの構造も同じようにして
+
 ## 参考にさせていただきました
 
 - [イショティハドゥスにキレられないための LaTeX 論文執筆メソッド - Qiita](https://qiita.com/Ishotihadus/items/bbbb85f54e6a4e7aaac0)
