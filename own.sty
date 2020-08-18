@@ -9,7 +9,7 @@
 
 
 % 数式
-\usepackage{amsmath,amssymb}  % つよ数式環境
+\usepackage{amsmath,amssymb,amsthm}  % つよ数式環境
 \usepackage{siunitx}  % SI単位
 \usepackage{bm}  % 太字のベクトル表記
 \usepackage{braket}  % 集合表現，波括弧これでよくね．\Set{}, \set{}
@@ -29,6 +29,22 @@
 % \nolimitsなしだと，display環境で下付き文字が真下につく
 % わざわざ\expコマンド使うのは指数部が複雑なときなのに括弧なしはねェだろうよ
 \renewcommand{\exp}[1]{\mathop{\mathrm{exp}}\nolimits\paren{#1}}
+
+% 証明環境．\qedhereで□出力
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+        \itshape
+    #1\@addpunct{}]\ignorespaces
+}{%
+  %\popQED\endtrivlist\@endpefalse  % 勝手にqed入らないように
+  \endtrivlist\@endpefalse
+}
+\renewcommand{\proofname}{\Ovalbox{\bf 証明}}
+\makeatother
 
 % ! 行間に文章入れたければ\intertext{文章}
 % alignatを使うと偶数番目の&で空白が入らない．\begin{alignat}{(行ごとの&の個数+1)/2}
