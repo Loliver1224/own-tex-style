@@ -230,23 +230,23 @@
 \def\stuid#1{\def\@stuid{#1}}
 
 \newcommand{\maketitlepage}{%
-\thispagestyle{empty}  % ベージ番号なし
-\null\vfill
-\begin{center}
-{\Huge \@title \par}
-\vspace{5mm}
-{\LARGE \@subtitle \par}
-\vspace{20mm}
-{\Large \@gakka \ \@grade 年 \hspace{.5ex} \@stuid 号 \par}
-\vspace{3mm}
-{\Large \@author \par}
-\vspace{8mm}
-{\Large \@date}
-\end{center}
-\vfill
-\clearpage
-\setcounter{page}{1}  % ここからページ番号振り始め
-\pagestyle{plain}
+  \thispagestyle{empty}  % ベージ番号なし
+  \null\vfill
+  \begin{center}
+    {\Huge \sffamily \@title \par}
+    \vspace{5mm}
+    {\LARGE \sffamily \@subtitle \par}
+    \vspace{20mm}
+    {\Large \@gakka \ \@grade 年 \hspace{.5ex} \@stuid 号 \par}
+    \vspace{3mm}
+    {\Large \@author \par}
+    \vspace{8mm}
+    {\Large \@date}
+  \end{center}
+  \vfill
+  \clearpage
+  \setcounter{page}{1}  % ここからページ番号振り始め
+  \pagestyle{plain}
 }
 \makeatother
 
