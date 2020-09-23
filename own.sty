@@ -29,6 +29,8 @@
 % \nolimitsなしだと，display環境で下付き文字が真下につく
 % わざわざ\expコマンド使うのは指数部が複雑なときなのに括弧なしはねェだろうよ
 \renewcommand{\exp}[1]{\mathop{\mathrm{exp}}\nolimits\paren{#1}}
+% \times 10^{n}
+\newcommand{\sipre}[1]{\times10^{#1}}
 
 % 証明環境．\qedhereで□出力
 \makeatletter
