@@ -1,5 +1,9 @@
 % 俺様用XeLaTeXスタイルだよ～🤗🤗
 
+% 条件分岐記述用
+\usepackage{ifthen}
+
+
 % フォント
 \usepackage{zxjatype}
 \usepackage[ipa]{zxjafont}
@@ -229,14 +233,17 @@
 \def\grade#1{\def\@grade{#1}}
 \def\stuid#1{\def\@stuid{#1}}
 \def\expdate#1{\def\@expdate{#1}}
+\def\coauthor#1{\def\@coauthor{#1}}
 
 \newcommand{\maketitlepage}{%
   \thispagestyle{empty}  % ベージ番号なし
   \null\vfill
   \begin{center}
     {\Huge \sffamily \@title \par}
-    \vspace{5mm}
-    {\LARGE \sffamily \@subtitle \par}
+    \ifthenelse{\equal{\@subtitle}{}}{}{%
+      \vspace{5mm}
+      {\LARGE \sffamily \@subtitle \par}
+    }
     \vspace{20mm}
     {\Large \@gakka \ \@grade 年 \@stuid 号 \par}
     \vspace{3mm}
@@ -245,10 +252,21 @@
     \begin{table}[H]
       \Large \centering
       \begin{tabular}{rl}
-        実験日： & \@expdate\\
+        \ifthenelse{\equal{\@expdate}{}}{}{%
+          実験日： & \@expdate\\
+        }
         提出日： & \@date
       \end{tabular}
     \end{table}
+    \vspace{8mm}
+    \ifthenelse{\equal{\@coauthor}{}}{}{%
+      {\Large 共同実験者：\hspace{1mm}}
+      \begin{minipage}[t]{14em}
+          \begin{flushleft}
+            \Large \@coauthor
+          \end{flushleft}
+      \end{minipage}
+    }
   \end{center}
   \vfill
   \clearpage
