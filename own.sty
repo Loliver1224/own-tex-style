@@ -84,6 +84,15 @@
 \usepackage{tikz}
 \usepackage{circuitikz}
 \usepackage{kvmap}  % カルノー図
+% 画像挿入簡略化
+\newcommand{\inputpic}[2]{%
+\includegraphics[width={#2}\linewidth]{#1}}
+\newcommand{\twocolpage}[2]{%
+\begin{minipage}[b]{.5\linewidth}\centering #1\end{minipage}%
+\begin{minipage}[b]{.5\linewidth}\centering #2\end{minipage}}
+\newcommand{\twofigure}[4]{%
+\begin{figure}[#1]\centering\begin{minipage}[b]{.5\linewidth}\centering #2\end{minipage}%
+\begin{minipage}[b]{.5\linewidth}\centering #3\end{minipage}#4\end{figure}}
 
 
 % 表
