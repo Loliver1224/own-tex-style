@@ -28,6 +28,8 @@
 \newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\norm}[1]{\left\|#1\right\|}
 % extra math operators
+% transpose
+\newcommand{\transpose}[1]{{}^t\!{#1}}
 % 斜体にしないでのやつ
 \newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
 % \nolimitsなしだと，display環境で下付き文字が真下につく
@@ -89,6 +91,7 @@
 \usepackage{multirow}  % セル縦結合
 \usepackage{arydshln}  % 破線
 \usepackage{diagbox}   % 左上のとこに斜線と文字入れるやつ
+\usepackage{dcolumn}   % 小数点揃え
 % 縦線は`:`，横線は`\hdashline, \cdashline`
 % 複数行にわたるテーブル用のlongtable環境てのもある
 % tabular環境内で\diagbox{row}{column}
