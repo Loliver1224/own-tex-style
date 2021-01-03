@@ -289,6 +289,12 @@
 \def\stuid#1{\def\@stuid{#1}}
 \def\expdate#1{\def\@expdate{#1}}
 \def\coauthor#1{\def\@coauthor{#1}}
+\global\let\@subtitle\@empty
+\global\let\@gakka\@empty
+\global\let\@grade\@empty
+\global\let\@stuid\@empty
+\global\let\@expdate\@empty
+\global\let\@coauthor\@empty
 
 \newcommand{\maketitlepage}{%
   \thispagestyle{empty}  % ベージ番号なし
